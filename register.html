@@ -36,6 +36,9 @@
               <div class="offset-md-3 col-md-6 col-sm-12">
                     <div class="register" id="contentArea">
                         <h1 class="display-4">Register</h1>
+                        <div id="errorMessage" class="alert alert-danger">
+                          This is where the error message goes...
+                        </div>
                         <form id="registerForm" novalidate>
                           <p class="hint-text">Create your own account. It's free and only takes a minute.</p>
 
@@ -45,18 +48,14 @@
                                 <input class="form-control" type="text" name="firstName" id="FirstName" placeholder="First Name" required>
                               </div>
 
-                              <div class ="alert alert-danger">
-                                This is where the error message goes...
-                              </div>
+                             
                               <form class = "needs-validation" id="contactForm" method="POST" novalidate></form>
 
                               <div class="col-md-6">
                                 <input class="form-control" type="text" name="lastName" id="lastName" placeholder="Last Name" required>
                               </div>
 
-                              <div class ="alert alert-danger">
-                                This is where the error message goes...
-                              </div>
+                             
 
                             </div>
                           </div>

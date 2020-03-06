@@ -1,4 +1,8 @@
-class Contact
+// Name: Harmanpreet Kaur
+// StudentID: 100734511
+// Date : 06-march-2020
+
+class Contact // contact class created which access contact name, emailAddress, contactNumber, contactMessage
 {
     constructor(contactName = "", emailAddress = "", contactNumber = "", contactMessage = "")
     {
@@ -10,7 +14,18 @@ class Contact
 }
 
 
-
+// user class access firstName, lastName, username, email and password.
+class user
+{
+    constructor(firstName = "", lastName = "", username ="", emailAddress = "", password = "")
+    {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.username = username;
+        this.emailAddress = emailAddress;
+        this.password = password;
+    }
+}
 
 "use strict";
 //IIFE - Immediately Invoked Function Expression
@@ -258,15 +273,6 @@ let app;
     function DisplayRegisterContent()
     {
         document.title = "WEBD6201 - Register";
-    }
-
-    /**
-     * Main Program entry point is here
-     *
-     */
-    function DisplayContactContent()
-    {
-        document.title = "WEBD6201 - Register";
         function clearForm()
         {
             //document.getElementById("contactForm").reset();
@@ -295,17 +301,17 @@ let app;
     
 
         // Register First Name Events
-        $("#contactFirstName").blur((e)=>
+        $("#FirstName").blur((e)=>
         {
-            validateInput("#contactFirstName",( $("#contactFirstName").val().length < 2),"Contact First Name is Too Short");
+            validateInput("#FirstName",( $("#FirstName").val().length < 2),"Contact First Name is Too Short");
         });
 
         // error message
 
 
-        $("#contactFirstName").focus((e)=>
+        $("#FirstName").focus((e)=>
         {
-            $("#contactFirstName").select();
+            $("#FirstName").select();
         });
 
          // Register Last Name Events
@@ -328,53 +334,14 @@ let app;
         $("#emailAddress").focus((e)=>
         {
             $("#emailAddress").select();
-        });
-
-
-        $("#registerForm").submit  ((e)=>
-        {
-            if(document.getElementById("registerForm").checkValidity() == false)
-            {
-                e.preventDefault();
-                e.stopPropagation();
-                console.log("form not valid");
-            }
-
-            
-            let contactName = $("#contactFirstName").val();
-            let contactName = $("#contactLastName").val();
-            let emailAddress = $("#emailAddress").val();
-            
-
-            console.log(`Contact Name: ${contactFirstName}`);
-            console.log(`Contact Name: ${contactLastName}`);
-            console.log(`Email Address: ${emailAddress}`);
-           
-
-            contactObject.contactName = contactFirstName;
-            contactObject.contactName = contactLastName;
-            contactObject.emailAddress = emailAddress;
-           
-
-            console.log(contactObject);
-
-            clearForm();
-        });
-
-        $("#resetButton").click((e)=>
-        {
-            e.preventDefault();
-            if(confirm("Are You Sure?"))
-            {
-                clearForm();
-            }
-
-            
-        });
+        });    
     }
 
-
-
+    /**
+     * Main Program entry point is here
+     *
+     */
+    
 
 
 
