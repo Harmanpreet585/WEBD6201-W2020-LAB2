@@ -17,11 +17,11 @@ class Contact // contact class created which access contact name, emailAddress, 
 // user class access firstName, lastName, username, email and password.
 class user
 {
-    constructor(firstName = "", lastName = "", username ="", emailAddress = "", password = "")
+    constructor(firstName = "", lastName = "", userName ="", emailAddress = "", password = "")
     {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.username = username;
+        this.userName = userName;
         this.emailAddress = emailAddress;
         this.password = password;
     }
@@ -334,7 +334,52 @@ let app;
         $("#emailAddress").focus((e)=>
         {
             $("#emailAddress").select();
-        });    
+        });  
+
+        // Register Last Name Events
+        $("#password").blur((e)=>
+        {
+            validateInput("#password",( $("#password").val().length < 6),"Please enter the correct password.");
+        });
+
+        $("#password").focus((e)=>
+        {
+            $("#password").select();
+        });
+
+        $("#registerForm").submit  ((e)=>
+        {
+            if(document.getElementById("registerForm").checkValidity() == false)
+            {
+                e.preventDefault();
+                e.stopPropagation();
+                console.log("form not valid");
+            }
+
+            
+            let firstName = $("#firstName").val();
+            let lastName = $("#lastName").val();
+            let userName = $("#firstName").val();
+            let emailAddress = $("#emailAddress").val();
+            
+
+            console.log(`First Name: ${firstName}`);
+            console.log(`Last Name: ${lastName}`);
+            console.log(`User Name: ${userName}`);
+            console.log(`Email Address: ${emailAddress}`);
+           
+
+            contactObject.firstName = firstName;
+            contactObject.lastName = lastName;
+            contactObject.userName = userName;
+            contactObject.emailAddress = emailAddress;
+           
+
+            console.log(contactObject);
+
+            clearForm();
+        });
+
     }
 
     /**
@@ -342,9 +387,6 @@ let app;
      *
      */
     
-
-
-
     function Main()
     {
        
