@@ -336,7 +336,7 @@ let app;
             $("#emailAddress").select();
         });  
 
-        // Register Last Name Events
+        // Register the password 
         $("#password").blur((e)=>
         {
             validateInput("#password",( $("#password").val().length < 6),"Please enter the correct password.");
@@ -346,6 +346,19 @@ let app;
         {
             $("#password").select();
         });
+
+         // For password confirmation
+
+         $("#confirmPassword").blur((e)=>
+        {
+            validateInput("#confirmPassword",( $("#confirmPassword").val()!=$("#password").val()),"Please confirm the password.");
+        });
+        
+         $("#confirmPassword").focus((e)=>
+        {
+             $("#confirmPassword").select();
+               
+            });
 
         $("#registerForm").submit  ((e)=>
         {
